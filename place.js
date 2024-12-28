@@ -115,3 +115,34 @@ function calculateTotalPrice(productName, amount) {
 }
 
 console.log(calculateTotalPrice("apple", 7548)); 
+
+
+//7
+
+const account = {
+    password: "JKLMNOP4567",
+    ballance: 54700,
+    history : {
+        deposit: 7,
+        withdraw: 8
+    }
+}
+
+let {password, ballance, history:{deposit, withdraw}} = account
+let verefication = prompt("Введіть свій пароль |JKLMNOP4567|")
+if (verefication !== password) {
+    alert("Пароль не правильний")
+} else {
+    while (true) {
+ if (confirm(`Добрий день, на вашому рахунку ${ballance}, поповнено рахунок ${deposit} а знято з рахунку ${withdraw} раз. натисніть|ОК| щоб поповнити рахунок і |СКАСУВАТИ| щоб зняти гроші`)){
+    const num = Number(prompt("Скільки хочете поповнити"))
+    ballance = ballance + num
+    deposit += 1
+ } else {
+    const num = prompt("Скільки хочете зняти")
+    ballance = ballance - num
+    withdraw += 1
+ }
+}
+}
+
